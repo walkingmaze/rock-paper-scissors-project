@@ -1,1 +1,1 @@
-# rock-paper-scissors-project-Odin-curriculum-
+# rock-paper-scissors-project
