@@ -10,3 +10,15 @@ return 'rock';
 return 'scissors';
 }
 }
+const signButton = document.querySelector("#signButton");
+const log = document.querySelector("#log");
+
+signButton.addEventListener("click", () => {
+  let sign = prompt("What your guess?");
+
+  if (sign === "paper" || sign === "rock" || sign === "scissors") {
+    log.innerText = "OK";
+  } else {
+    log.innerText = "Try again";
+  }
+});
