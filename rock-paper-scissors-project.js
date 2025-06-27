@@ -10,13 +10,13 @@ return 'rock';
 return 'scissors';
 }
 }
-const signButton = document.querySelector("#signButton");
+const choiceButton = document.querySelector("#choiceButton");
 const log = document.querySelector("#log");
 
-signButton.addEventListener("click", () => {
-  let sign = prompt("What your guess?");
+choiceButton.addEventListener("click", () => {
+  let choice = prompt("What your guess?");
 
-  if (sign === "paper" || sign === "rock" || sign === "scissors") {
+  if (choice === "paper" || choice === "rock" || choice === "scissors") {
     log.innerText = "OK";
   } else {
     log.innerText = "Try again";
