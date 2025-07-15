@@ -54,7 +54,13 @@ if (getHumanChoice === "rock" && getComputerChoice === "scissors") {
   return "The result is even. Try again."
 }
   }
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
-playRound(humanSelection, computerSelection);
+function game() {
+  for (let i = 0; i < 5; i++) {
+    const humanSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
+    const currentRound = playRound(humanSelection, computerSelection);
+    console.log(currentRound);
+  }
+}
+
 
