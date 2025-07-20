@@ -7,15 +7,6 @@ function getHumanChoice() {
   return choice.toLowerCase();
 }
 
-const choiceButton = document.getElementById("choiceButton");
-choiceButton.addEventListener("click",function() {
-  const userChoice = getHumanChoice();
-  if (userChoice !== null) {
-  console.log("User choice:", userChoice);
-} else {
-  console.log("User cancelled the prompt")
-}
-});
 
 let min = 1;
 let max = 3;
@@ -29,9 +20,9 @@ return "scissors";
 }
 }
 
-function playGame() {
 let humanScore = 0;
 let computerScore = 0;
+function playGame() {
 
 function playRound(getHumanChoice, getComputerChoice) {
 if (getHumanChoice === "rock" && getComputerChoice === "scissors") {
@@ -76,3 +67,4 @@ if (getHumanChoice === "rock" && getComputerChoice === "scissors") {
 console.log(`Final Score - You: ${humanScore}, Computer: ${computerScore}`);
 }
 
+playGame();
