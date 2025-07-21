@@ -23,48 +23,32 @@ return "scissors";
 let humanScore = 0;
 let computerScore = 0;
 function playGame() {
+  function playRound(humanChoice, computerChoice) {
+    console.log(`Your Choice: ${humanChoice}. Computer: ${computerChoice}`);
+    
+    if (humanChoice === computerChoice) {
+      console.log("The result is even");
+      return; // No score increment for a tie
+    }
 
-function playRound(getHumanChoice, getComputerChoice) {
-if (getHumanChoice === "rock" && getComputerChoice === "scissors") {
-  humanScore +=1;
-    console.log("You win. Rock breaks scissors");
-    return ("Your Choice: " + getHumanChoice + ". " + "Computer: " + getComputerChoice);
-} else if (getHumanChoice === "paper" && getComputerChoice === "rock") {
-  humanScore +=1;
-    console.log("You win! Paper covers rock");
-    return ("Your Choice: " + getHumanChoice + ". " + "Computer: " + getComputerChoice);
-} else if 
-  (getHumanChoice === "scissors" && getComputerChoice === "paper") {
-  humanScore +=1;
-   console.log("You win! Scissors cut paper");
-   return ("Your Choice: " + getHumanChoice + ". " + "Computer: " + getComputerChoice);
-} else if (getHumanChoice === "scissors" && getComputerChoice === "rock") {
-  computerScore += 1;
-  console.log("You lose! Rock breaks scissors");
-   return ("Your Choice: " + getHumanChoice + ". " + "Computer: " + getComputerChoice);
-} else if (getHumanChoice === "rock" && getComputerChoice === "paper") {
-  computerScore += 1;
-    console.log("You lose. Paper covers rock");
-    return ("Your Choice: " + getHumanChoice + ". " + "Computer: " + getComputerChoice);
-} else if (getHumanChoice === "paper" && getComputerChoice === "scissors") {
-  computerScore += 1;
-    console.log("You lose! Scissors cut paper");
-   return ("Your Choice: " + getHumanChoice + ". " + "Computer: " + getComputerChoice);
-} else {
-  humanScore += 1;
-  computerScore += 1;
-  console.log("The result is even");
-  return ("Your Choice: " + getHumanChoice + ". " + "Computer: " + getComputerChoice);
-} 
+    if ((humanChoice === "rock" && computerChoice === "scissors") ||
+        (humanChoice === "paper" && computerChoice === "rock") ||
+        (humanChoice === "scissors" && computerChoice === "paper")) {
+      humanScore += 1;
+      console.log(`You win! ${humanChoice} beats ${computerChoice}.`);
+    } else {
+      computerScore += 1;
+      console.log(`You lose! ${computerChoice} beats ${humanChoice}.`);
+    }
   }
+
   for (let i = 0; i < 5; i++) {
     const humanSelection = getHumanChoice();
     const computerSelection = getComputerChoice();
-    const currentRound = playRound(humanSelection, computerSelection);
-    console.log(currentRound);
+    playRound(humanSelection, computerSelection);
   }
 
-console.log(`Final Score - You: ${humanScore}, Computer: ${computerScore}`);
+  console.log(`Final Score - You: ${humanScore}, Computer: ${computerScore}`);
 }
 
 playGame();
